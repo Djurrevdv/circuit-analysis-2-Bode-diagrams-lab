@@ -62,7 +62,7 @@ print(f"Average Phase Error: {avg_phase_error:.2f} °")
 # --------------------------
 # All-in-one Figure with 3 subplots
 # --------------------------
-fig, axs = plt.subplots(2, 1, figsize=(5, 6), sharex=True)
+fig, axs = plt.subplots(3, 1, figsize=(5, 6), sharex=True)
 
 # Magnitude comparison
 axs[0].plot(x_theo, mag_theo, label='Theoretical', color='blue', linewidth=2)
@@ -89,4 +89,5 @@ axs[2].legend()
 
 plt.tight_layout()
 plt.show()
+
 
