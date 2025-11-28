@@ -65,7 +65,7 @@ print(f"Average Phase Error: {avg_phase_error:.2f} °")
 fig, axs = plt.subplots(2, 1, figsize=(5, 6), sharex=True)
 
 # Magnitude comparison
-#axs[0].plot(x_theo, mag_theo, label='Theoretical', color='blue', linewidth=2)
+axs[0].plot(x_theo, mag_theo, label='Theoretical', color='blue', linewidth=2)
 axs[0].plot(x_meas, mag_meas, label='Measured', color='red',  linestyle='-', linewidth=1)
 axs[0].set_ylabel("Magnitude (dB)")
 axs[0].set_title("Bode Diagram Measurements RLC Circuit")
@@ -73,19 +73,20 @@ axs[0].grid(True, which='both')
 axs[0].legend()
 
 # Phase comparison
-#axs[1].plot(x_theo, phase_theo, label='Theoretical', color='blue', linewidth=2)
+axs[1].plot(x_theo, phase_theo, label='Theoretical', color='blue', linewidth=2)
 axs[1].plot(x_meas, phase_meas, label='Measured', color='red', linestyle='-', linewidth=1)
 axs[1].set_ylabel("Phase (°)")
 axs[1].grid(True, which='both')
 axs[1].legend()
 
 # Error plot
-#axs[2].plot(x_meas, mag_error, label='Magnitude Error (dB)', marker='o', linestyle='-', color='red')
-#axs[2].plot(x_meas, phase_error, label='Phase Error (°)', marker='x', linestyle='-', color='blue')
-#axs[2].set_xlabel("log10(ω / ω₀)")
-#axs[2].set_ylabel("Absolute Error")
-#axs[2].grid(True, which='both')
-#axs[2].legend()
+axs[2].plot(x_meas, mag_error, label='Magnitude Error (dB)', marker='o', linestyle='-', color='red')
+axs[2].plot(x_meas, phase_error, label='Phase Error (°)', marker='x', linestyle='-', color='blue')
+axs[2].set_xlabel("log10(ω / ω₀)")
+axs[2].set_ylabel("Absolute Error")
+axs[2].grid(True, which='both')
+axs[2].legend()
 
 plt.tight_layout()
 plt.show()
+
