@@ -63,7 +63,7 @@ print(f"Average Phase Error: {avg_phase_error:.2f} °")
 # --------------------------
 # All-in-one Figure with 3 subplots
 # --------------------------
-fig, axs = plt.subplots(3, 1, figsize=(5, 6), sharex=True)
+fig, axs = plt.subplots(3, 1, figsize=(10, 12), sharex=False)
 
 # Magnitude comparison
 axs[0].plot(x_theo, mag_theo, label='Theoretical', color='blue', linewidth=2)
@@ -71,6 +71,7 @@ axs[0].plot(x_meas, mag_meas, label='Measured', color='red', linestyle='-', line
 axs[0].set_ylabel("Magnitude (dB)")
 axs[0].set_title("Bode Diagram Measurements RC Circuit")
 axs[0].grid(True, which='both')
+axs[0].set_xlabel("log10(ω / ω₀)")
 axs[0].legend()
 
 # Phase comparison
@@ -78,6 +79,7 @@ axs[1].plot(x_theo, phase_theo, label='Theoretical', color='blue', linewidth=2)
 axs[1].plot(x_meas, phase_meas, label='Measured', color='red', linestyle='-', linewidth=1)
 axs[1].set_ylabel("Phase (°)")
 axs[1].grid(True, which='both')
+axs[1].set_xlabel("log10(ω / ω₀)")
 axs[1].legend()
 
 # Error plot
@@ -90,4 +92,3 @@ axs[2].legend()
 
 plt.tight_layout()
 plt.show()
-
